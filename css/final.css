@@ -1,0 +1,165 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Sacramento&display=swap");
+
+:root {
+  --paper: #fff7ee;
+  --paper-warm: #f6ede2;
+  --accent: #f23375;
+  --accent-soft: #f7b3ca;
+  --ink: #2f1d24;
+  --muted: rgba(47, 29, 36, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: radial-gradient(circle at top, #fff8f1, var(--paper) 55%, var(--paper-warm) 100%);
+  color: var(--ink);
+  font-family: "Poppins", sans-serif;
+}
+
+.final {
+  width: min(92vw, 480px);
+  min-height: 100vh;
+  padding: 36px 22px 48px;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.35rem;
+  color: #f4a6bb;
+  margin-bottom: 32px;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 22px;
+  color: #f2a3bb;
+  font-size: 2rem;
+}
+
+.icons .bulb {
+  color: #f0b238;
+  font-size: 1.8rem;
+}
+
+.progress {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: 16px;
+  margin: 0 auto;
+  border-radius: 999px;
+  background: #f7d9e5;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(242, 51, 117, 0.2);
+}
+
+.progress .bar {
+  width: 70%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    135deg,
+    #f23375 0,
+    #f23375 10px,
+    #f46a98 10px,
+    #f46a98 18px
+  );
+}
+
+.progress .heart {
+  position: absolute;
+  right: 80px;
+  top: -8px;
+  background: #fff;
+  color: #f23375;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 14px rgba(242, 51, 117, 0.35);
+}
+
+.loading {
+  margin-top: 12px;
+  color: #f23375;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+}
+
+h1 {
+  margin-top: 26px;
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
+
+.sub {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.hand {
+  margin: 30px auto 20px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #f6c1d4;
+  display: grid;
+  place-items: center;
+  color: #f23375;
+  font-size: 1.6rem;
+}
+
+.thanks {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-top: 8px;
+}
+
+.name {
+  font-family: "Sacramento", cursive;
+  font-size: 2rem;
+  color: #f23375;
+  margin-top: 6px;
+}
+
+.cta {
+  margin-top: 30px;
+  width: 100%;
+  padding: 18px 22px;
+  border-radius: 999px;
+  border: none;
+  background: #2b151c;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 18px 30px rgba(43, 21, 28, 0.3);
+}
+
+@media (max-width: 420px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .final {
+    padding: 32px 18px 42px;
+  }
+}

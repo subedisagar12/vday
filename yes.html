@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>She Said Yes</title>
+    <link rel="stylesheet" href="css/yes.css" />
+  </head>
+  <body>
+    <main class="yes-page">
+      <div class="confetti" id="confetti" aria-hidden="true"></div>
+      <header class="yes-header">
+        <button
+          class="back-button"
+          type="button"
+          aria-label="Back"
+          onclick="location.href='question.html'"
+        >
+          <span aria-hidden="true">&#10094;</span>
+        </button>
+        <h2>She said Yes!<span aria-hidden="true">&#128151;</span></h2>
+        <span class="spacer" aria-hidden="true"></span>
+      </header>
+
+      <section class="hero">
+        <div class="hero-frame">
+          <img src="assets/6.jpeg" alt="A couple hugging" />
+        </div>
+      </section>
+
+      <h1>Yay... I'm the luckiest.</h1>
+      <p class="subtitle">And I don't say that lightly.</p>
+
+      <div class="heart-chip" aria-hidden="true">&#10084;</div>
+
+      <button class="cta" type="button" onclick="location.href='dateinvite.html'">
+        Continue <span aria-hidden="true">&#8594;</span>
+      </button>
+
+      <!-- <div class="dedication">
+        <p>DEDICATED TO</p>
+        <strong>My Maya</strong>
+      </div> -->
+
+      <!-- <button class="moon" type="button" aria-label="Night mode">
+        <span aria-hidden="true">&#9790;</span>
+      </button> -->
+    </main>
+    <script>
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      );
+      const confetti = document.getElementById("confetti");
+
+      if (!prefersReducedMotion.matches) {
+        const colors = ["#f23375", "#ff7aa7", "#ffd1e1", "#f7b3ca", "#ffffff"];
+        const pieceCount = 120;
+        for (let i = 0; i < pieceCount; i += 1) {
+          const piece = document.createElement("span");
+          piece.style.left = `${Math.random() * 100}%`;
+          piece.style.backgroundColor =
+            colors[Math.floor(Math.random() * colors.length)];
+          piece.style.animationDelay = `${Math.random() * 0.8}s`;
+          piece.style.animationDuration = `${2.2 + Math.random() * 1.6}s`;
+          confetti.appendChild(piece);
+        }
+
+        setTimeout(() => {
+          confetti.remove();
+        }, 5000);
+      }
+    </script>
+  </body>
+</html>

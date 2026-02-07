@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Why Choose Me?</title>
+    <link rel="stylesheet" href="css/whychoose.css" />
+  </head>
+  <body>
+    <main class="pitch">
+      <header class="hero">
+        <a class="back" href="question.html">&#10094; Back</a>
+        <div class="title-wrap">
+          <p class="eyebrow">VALENTINE PITCH</p>
+          <h1>Why Choose Me?</h1>
+          <p class="subtitle">
+            As you have decided not to choose me, here are some reasons why you might want to reconsider. No pressure, just some sweet perks of picking me as your Valentine. 💌
+          </p>
+        </div>
+      </header>
+
+      <section class="cards">
+       <article class="card reveal">
+  <div class="card-top">
+    <h2>Emotional Support - Lifetime Edition</h2>
+    <span class="badge">Premium</span>
+  </div>
+  <ul>
+    <li>Unlimited listening, quiet reassurance, and “everything will be okay” moments.</li>
+    <li>Warm smiles and comfort snacks when life feels a little too loud.</li>
+    <li>Gentle forehead kisses, perfectly timed, available day and night.</li>
+  </ul>
+  <p class="footnote">*No fees, no trials, just care, support and a lot of love.</p>
+</article>
+
+
+        <article class="card reveal">
+  <div class="card-top">
+    <h2>Loyalty Card - One Heart Policy</h2>
+    <span class="toggle" aria-hidden="true">ACTIVE</span>
+  </div>
+  <ul>
+    <li>One heart, fully committed. No backups, no fine print.</li>
+    <li>Showing up consistently, in big moments and quiet ones.</li>
+    <li>Choosing you every day, even when life gets a little messy.</li>
+  </ul>
+  <p class="footnote">Points never expire. Feelings only grow.</p>
+</article>
+
+
+        <article class="card reveal">
+  <div class="card-top">
+    <h2>Responsibility Card</h2>
+    <span class="badge">Trusted</span>
+  </div>
+  <ul>
+    <li>Takes your feelings seriously, always.</li>
+    <li>Shows up on time, emotionally and otherwise.</li>
+    <li>Thinks things through, so you don’t have to worry alone.</li>
+  </ul>
+  <p class="footnote">Stable, reliable, and very much intentional.</p>
+</article>
+
+
+        <article class="card reveal">
+  <div class="card-top">
+    <h2>Respect - Always Included</h2>
+    <span class="badge">Non-Negotiable</span>
+  </div>
+  <ul>
+    <li>Your feelings and boundaries are taken seriously.</li>
+    <li>Listens fully, not just to reply, but to understand.</li>
+    <li>Supports your growth without trying to change you.</li>
+  </ul>
+  <p class="footnote">Handled with care, patience, and genuine regard.</p>
+</article>
+
+
+        <article class="card reveal">
+  <div class="card-top">
+    <h2>Commitment - No Exit Clause</h2>
+    <span class="toggle" aria-hidden="true">Locked In</span>
+  </div>
+  <ul>
+    <li>Choosing you, not just when it’s easy, but when it matters most.</li>
+    <li>Staying present through growth, change, and everything in between.</li>
+    <li>Building something real, steady, and meant to last.</li>
+  </ul>
+  <p class="footnote">This isn’t temporary, it’s forever.</p>
+</article>
+
+      </section>
+
+      <section class="cta">
+        <h3>Ready to reconsider?</h3>
+        <p>Both buttons lead to a very sweet outcome.</p>
+        <div class="cta-actions">
+          <button class="btn primary" type="button" data-target="yes.html">
+            Okay, you win 💘
+          </button>
+          <button class="btn ghost" type="button" data-target="yes.html">
+            Fine, yes 😌
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const cards = document.querySelectorAll(".card");
+      const buttons = document.querySelectorAll(".btn");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in-view");
+              const icon = entry.target.querySelector(".badge, .toggle");
+              if (icon) {
+                icon.classList.add("pulse");
+              }
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      cards.forEach((card) => observer.observe(card));
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+          const ripple = document.createElement("span");
+          ripple.className = "ripple";
+          const rect = button.getBoundingClientRect();
+          ripple.style.left = `${event.clientX - rect.left}px`;
+          ripple.style.top = `${event.clientY - rect.top}px`;
+          button.appendChild(ripple);
+          setTimeout(() => ripple.remove(), 550);
+          const target = button.getAttribute("data-target");
+          setTimeout(() => {
+            window.location.href = target;
+          }, 200);
+        });
+      });
+    </script>
+  </body>
+</html>

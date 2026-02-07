@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unlock the Surprise</title>
+    <link rel="stylesheet" href="css/surprise.css" />
+  </head>
+  <body>
+    <main class="surprise">
+      <header class="surprise-header">
+        <button
+          class="back"
+          type="button"
+          aria-label="Back"
+          onclick="location.href='dateinvite.html'"
+        >
+          <span aria-hidden="true">&#10094;</span>
+        </button>
+        <h1>For Sudha Kaphle</h1>
+        <span class="spacer" aria-hidden="true"></span>
+      </header>
+
+      <section class="lock-card">
+        <div class="lock-shell">
+          <div class="lock-seal">
+            <span aria-hidden="true">&#10084;</span>
+          </div>
+          <span class="lock-line" aria-hidden="true"></span>
+        </div>
+        <span class="heart heart-one" aria-hidden="true">&#10084;</span>
+        <span class="heart heart-two" aria-hidden="true">&#10084;</span>
+        <span class="heart heart-three" aria-hidden="true">&#10084;</span>
+      </section>
+
+      <section class="copy">
+        <h2>Unlock The Surprise <span aria-hidden="true">&#128274;&#128273;</span></h2>
+        <p>
+          I'll tell you the plan soon... For now, just know this – I can't wait
+          to spend that day with you.
+        </p>
+      </section>
+
+      <button class="cta" id="unlockButton" type="button">
+        <span aria-hidden="true">&#128274;</span>
+        Unlock Your Surprise
+      </button>
+
+      <p class="hint" id="hintText">10 clicks away from surprise</p>
+    </main>
+    <script>
+      const unlockButton = document.getElementById("unlockButton");
+      const hintText = document.getElementById("hintText");
+      let remaining = 10;
+
+      unlockButton.addEventListener("click", () => {
+        remaining -= 1;
+        if (remaining <= 0) {
+          window.location.href = "final.html";
+          return;
+        }
+        hintText.textContent = `${remaining} click${remaining === 1 ? "" : "s"} away from surprise`;
+      });
+    </script>
+  </body>
+</html>

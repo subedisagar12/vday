@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heartfelt Moment</title>
+    <link rel="stylesheet" href="css/pause.css" />
+  </head>
+  <body>
+    <main class="moment">
+      <a class="back-link" href="index.html">&#10094; Back</a>
+      <span class="tiny-heart" aria-hidden="true">&#10084;</span>
+
+      <section class="message">
+        <h1>Before we move forward...</h1>
+        <p>
+          There are a few things I want you to
+          <span class="cursor">know</span>
+        </p>
+      </section>
+
+      <div class="actions">
+        <button class="primary" type="button" onclick="location.href='whyyou.html'">
+          Tell me
+        </button>
+        <button class="ghost" id="dontCare" type="button">I don't care</button>
+      </div>
+      <p class="plea" id="pleaMessage">please..</p>
+
+      <script>
+        const dontCare = document.getElementById("dontCare");
+
+        const sadEmojis = ["😢", "😭", "🥺", "💔", "😞", "😔"];
+        const pleadTexts = [
+          "Please press Tell me 💗",
+          "Come on, tap Tell me 🥺",
+          "Don't leave! Hit Tell me 💔",
+          "Tell me, please... 😢",
+          "Just press Tell me 🙏",
+          "Be kind — tap Tell me ✨",
+          "Give me a chance... 💞",
+          "I'll be gentle — Tell me 🫶",
+          "One more tap, please 💓",
+          "I'm waiting... press Tell me 🥹"
+        ];
+        const pleaMessage = document.getElementById("pleaMessage");
+        const actions = document.querySelector(".actions");
+        let dontCareClicks = 0;
+
+        dontCare.addEventListener("click", () => {
+          const rect = dontCare.getBoundingClientRect();
+          dontCareClicks += 1;
+          const index = (dontCareClicks - 1) % pleadTexts.length;
+          dontCare.textContent = pleadTexts[index];
+          if (dontCareClicks >= pleadTexts.length) {
+            actions.innerHTML =
+              '<button class="primary" type="button" onclick="location.href=\'whyyou.html\'">Tell me</button>';
+            pleaMessage.textContent = "please..";
+            pleaMessage.classList.add("show");
+          }
+          const burstCount = 3;
+          for (let i = 0; i < burstCount; i += 1) {
+            const emoji = document.createElement("span");
+            emoji.className = "sad-emoji";
+            emoji.textContent =
+              sadEmojis[Math.floor(Math.random() * sadEmojis.length)];
+            emoji.style.left = `${rect.left + rect.width / 2}px`;
+            emoji.style.top = `${rect.top + rect.height / 2}px`;
+            emoji.style.animationDelay = `${i * 0.1}s`;
+            document.body.appendChild(emoji);
+            emoji.addEventListener("animationend", () => emoji.remove());
+          }
+        });
+      </script>
+    </main>
+  </body>
+</html>

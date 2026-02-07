@@ -1,0 +1,225 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap");
+
+:root {
+  --rose: #f23375;
+  --rose-deep: #e02463;
+  --rose-soft: #ff7aa7;
+  --ink: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.6);
+  --bg-dark: #1a0c12;
+  --bg-mid: #2a0f1c;
+  --bg-light: #361424;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: radial-gradient(circle at top, var(--bg-light), var(--bg-mid) 45%, var(--bg-dark) 100%);
+  color: var(--ink);
+  font-family: "Poppins", sans-serif;
+}
+
+.question {
+  width: min(92vw, 430px);
+  min-height: 100vh;
+  padding: 28px 20px 44px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.question-header {
+  display: grid;
+  grid-template-columns: 54px 1fr 54px;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.back-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 26px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.pill {
+  justify-self: center;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: #2a131f;
+  color: var(--rose);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.18rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+}
+
+.spacer {
+  height: 1px;
+}
+
+.heart {
+  position: absolute;
+  color: var(--rose-soft);
+  opacity: 0.65;
+  font-size: 1.8rem;
+}
+
+.heart-top {
+  top: 90px;
+  left: 58px;
+}
+
+.heart-left {
+  top: 160px;
+  left: 40px;
+  font-size: 2.4rem;
+  opacity: 0.6;
+}
+
+.photo-area {
+  display: grid;
+  place-items: center;
+  margin-top: 12px;
+}
+
+.photo-card {
+  position: relative;
+  width: min(72vw, 300px);
+  aspect-ratio: 1 / 1;
+  border-radius: 32px;
+  background: #1f1a1f;
+  border: 10px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 40px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  transform: rotate(-1.5deg);
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotate(1.5deg) scale(1.04);
+}
+
+.heart-badge {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #2a131f;
+  color: var(--rose);
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  margin-top: 26px;
+  font-family: "Playfair Display", serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin-top: 8px;
+  font-size: 1.15rem;
+  color: var(--muted);
+}
+
+.actions {
+  margin-top: 36px;
+  display: grid;
+  gap: 16px;
+}
+
+.cta {
+  width: 100%;
+  padding: 18px 22px;
+  border-radius: 999px;
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta.primary {
+  --yes-scale: 1;
+  background: linear-gradient(120deg, var(--rose) 0%, #ff2f7b 60%, var(--rose-deep) 100%);
+  color: #fff;
+  box-shadow: 0 18px 32px rgba(242, 51, 117, 0.35);
+  transform: scale(var(--yes-scale));
+}
+
+.cta.primary:hover {
+  transform: translateY(-2px) scale(var(--yes-scale));
+}
+
+.cta.ghost {
+  background: #2a131f;
+  color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.cta.ghost:hover {
+  transform: translateY(-1px);
+}
+
+.shake {
+  animation: shake 0.35s ease;
+}
+
+.footer {
+  margin-top: 30px;
+  font-size: 0.75rem;
+  letter-spacing: 0.25rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-6px);
+  }
+  40% {
+    transform: translateX(6px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(4px);
+  }
+}
+
+@media (max-width: 420px) {
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  .photo-card {
+    width: min(80vw, 280px);
+  }
+}

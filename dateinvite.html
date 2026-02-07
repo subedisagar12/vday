@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date Invite</title>
+    <link rel="stylesheet" href="css/dateinvite.css" />
+  </head>
+  <body>
+    <main class="invite">
+      <div class="invite-content" id="inviteContent">
+        <header class="invite-header">
+          <button
+            class="back-button"
+            type="button"
+            aria-label="Back"
+            onclick="location.href='yes.html'"
+          >
+            <span aria-hidden="true">&#10094;</span>
+          </button>
+          <div class="brand">
+            <span class="brand-heart" aria-hidden="true">&#10084;</span>
+            <span>For Sudha</span>
+          </div>
+          <span class="menu" aria-hidden="true">&#8226;&#8226;&#8226;</span>
+        </header>
+
+        <section class="calendar-card">
+          <div class="calendar-top">
+            <button class="nav" type="button" aria-label="Previous">&#10094;</button>
+            <h2>February 2026</h2>
+            <button class="nav" type="button" aria-label="Next">&#10095;</button>
+          </div>
+          <div class="calendar-grid">
+            <span class="day">S</span>
+            <span class="day">M</span>
+            <span class="day">T</span>
+            <span class="day">W</span>
+            <span class="day">T</span>
+            <span class="day">F</span>
+            <span class="day">S</span>
+
+            <span class="date">1</span>
+            <span class="date">2</span>
+            <span class="date">3</span>
+            <span class="date">4</span>
+            <span class="date">5</span>
+            <span class="date">6</span>
+            <span class="date">7</span>
+            <span class="date">8</span>
+            <span class="date">9</span>
+            <span class="date">10</span>
+            <span class="date">11</span>
+            <span class="date">12</span>
+            <span class="date">13</span>
+            <span class="date highlight">14</span>
+            <span class="date">15</span>
+            <span class="date">16</span>
+            <span class="date">17</span>
+            <span class="date">18</span>
+            <span class="date">19</span>
+            <span class="date">20</span>
+            <span class="date">21</span>
+            <span class="date">22</span>
+            <span class="date">23</span>
+            <span class="date">24</span>
+            <span class="date">25</span>
+            <span class="date">26</span>
+            <span class="date">27</span>
+            <span class="date">28</span>
+          </div>
+          <span class="float-heart" aria-hidden="true"></span>
+        </section>
+
+        <section class="copy">
+          <h1>So... are you free on<br />Valentine's Day?</h1>
+          <p>I've planned something special — just us.</p>
+        </section>
+
+        <div class="actions">
+          <button class="cta primary" id="yesButton" type="button" onclick="location.href='surprise.html'">
+            Yes, I'm all yours <span aria-hidden="true">&#128151;</span>
+          </button>
+          <button class="cta ghost" id="letMeCheck" type="button">Let me check</button>
+        </div>
+      </div>
+
+      <section class="scan" id="scan">
+        <h2>Checking availability...</h2>
+        <p class="scan-message" id="scanMessage">Checking calendar...</p>
+        <div class="scan-bar">
+          <span class="scan-fill" id="scanFill"></span>
+        </div>
+        <p class="scan-result" id="scanResult">
+          Even a little time with you would mean a lot to me.
+        </p>
+        <div class="scan-actions" id="scanActions">
+          <button class="cta primary" type="button" onclick="location.href='surprise.html'">
+            Okay fine ❤️
+          </button>
+          <button class="cta ghost" type="button" onclick="location.href='surprise.html'">
+            I guess I'll say yes... 😅
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const letMeCheck = document.getElementById("letMeCheck");
+      const yesButton = document.getElementById("yesButton");
+      const inviteContent = document.getElementById("inviteContent");
+      const scan = document.getElementById("scan");
+      const scanMessage = document.getElementById("scanMessage");
+      const scanFill = document.getElementById("scanFill");
+      const scanResult = document.getElementById("scanResult");
+      const scanActions = document.getElementById("scanActions");
+      let scanning = false;
+
+      const messages = [
+        "Checking calendar...",
+        "Consulting the universe...",
+        "Confirming if anyone could possibly be more important than me..."
+      ];
+
+      letMeCheck.addEventListener("click", () => {
+        if (scanning) return;
+        scanning = true;
+        yesButton.disabled = true;
+        letMeCheck.disabled = true;
+        inviteContent.classList.add("hidden");
+        scan.classList.add("active");
+        scanFill.classList.remove("complete");
+        scanFill.classList.add("animate");
+        scanResult.classList.remove("show");
+        scanActions.classList.remove("show");
+
+        let index = 0;
+        scanMessage.textContent = messages[index];
+        const interval = setInterval(() => {
+          index += 1;
+          if (index < messages.length) {
+            scanMessage.textContent = messages[index];
+          } else {
+            clearInterval(interval);
+          }
+        }, 2800);
+
+        setTimeout(() => {
+          scanFill.classList.remove("animate");
+          scanFill.classList.add("complete");
+          scanMessage.textContent =
+            "Good news. That day is still open… and I can’t think of anyone more right for it than you.";
+          scanResult.classList.add("show");
+          scanActions.classList.add("show");
+        }, 9000);
+      });
+    </script>
+  </body>
+</html>

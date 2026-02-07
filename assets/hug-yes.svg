@@ -1,0 +1,49 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="680" height="760" viewBox="0 0 680 760" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6d5bc"/>
+      <stop offset="1" stop-color="#d6b6a7"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4c4a9"/>
+      <stop offset="1" stop-color="#e4a989"/>
+    </linearGradient>
+    <linearGradient id="hair" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b2020"/>
+      <stop offset="1" stop-color="#1f1212"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b5c5c"/>
+      <stop offset="1" stop-color="#2c3f42"/>
+    </linearGradient>
+    <linearGradient id="sweater" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c9782d"/>
+      <stop offset="1" stop-color="#a35a22"/>
+    </linearGradient>
+  </defs>
+  <rect width="680" height="760" fill="url(#bg)"/>
+  <g transform="translate(120 130)">
+    <g>
+      <path d="M96 312c-4-58 18-114 60-144 42-30 98-30 140 2 40 30 62 82 58 142-4 50-20 94-50 124-30 30-68 46-110 46-44 0-84-18-108-52-26-36-36-76-40-118z" fill="url(#shirt)"/>
+      <path d="M52 420c28-60 80-96 138-96 62 0 110 36 140 100 16 34 18 66 10 94H104c-36-40-52-62-52-98z" fill="#284041"/>
+    </g>
+    <g transform="translate(40 24)">
+      <path d="M120 120c4-44 34-82 74-94 36-10 72 0 96 26 26 30 34 76 18 116-16 40-52 66-90 66-34 0-64-16-82-44-14-22-20-46-16-70z" fill="url(#skin)"/>
+      <path d="M90 84c18-40 56-64 104-66 42-2 80 18 100 54 8 14 12 28 12 44-20-20-54-30-98-24-38 4-74 20-102 44-16 14-30 30-38 48-10-32-10-60 22-100z" fill="url(#hair)"/>
+      <path d="M152 156c12-6 26-6 36 2" stroke="#d4967f" stroke-width="6" stroke-linecap="round"/>
+      <path d="M124 140c10-6 22-6 32 2" stroke="#d4967f" stroke-width="6" stroke-linecap="round"/>
+      <path d="M138 178c12 12 30 12 42 0" stroke="#d47c69" stroke-width="6" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(250 40)">
+      <path d="M80 124c6-44 34-80 76-90 34-8 68 4 92 30 26 30 34 70 24 110-12 42-48 68-90 68-36 0-68-20-86-52-12-24-18-46-16-66z" fill="url(#skin)"/>
+      <path d="M56 88c16-36 52-60 96-62 44-2 82 20 104 56 10 16 16 34 16 50-22-20-56-30-100-24-36 6-68 22-94 46-16 14-28 28-36 42-8-28-8-54 14-88z" fill="url(#hair)"/>
+      <path d="M110 160c10-6 22-6 32 0" stroke="#d4967f" stroke-width="6" stroke-linecap="round"/>
+      <path d="M132 180c12 12 32 12 44 0" stroke="#d47c69" stroke-width="6" stroke-linecap="round"/>
+    </g>
+    <g>
+      <path d="M250 300c34-8 72-2 104 18 24 14 44 38 60 70 12 24 20 50 22 78H236c-16-38-18-76-8-118 8-32 16-40 22-48z" fill="url(#sweater)"/>
+      <path d="M142 316c-10-20-6-40 14-62 24-26 60-38 96-34 40 4 68 24 90 58l-18 12c-18-22-40-34-70-34-30 0-56 12-78 36l-34 24z" fill="url(#skin)"/>
+      <path d="M278 300c28 0 54 14 78 42l-18 12c-18-16-36-22-54-22-20 0-40 8-58 24l-18-12c18-28 44-44 70-44z" fill="url(#skin)"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Why You</title>
+    <link rel="stylesheet" href="css/whyyou.css" />
+  </head>
+  <body>
+    <main class="letter">
+      <header class="letter-header">
+        <a class="back" href="pause.html">&#10094; Back</a>
+      </header>
+
+      <span class="floating-heart" aria-hidden="true">&#10084;</span>
+
+      <p class="thank-you">First try on “Tell me,” huh? I knew you couldn’t resist.</p>
+
+      <h1>Why You</h1>
+
+      <article class="note">
+  <p>
+    Dearest Sudha, I don’t think I’ve ever told you this properly, but being with you feels like exhaling after holding my breath for far too long. There’s something about your presence that brings an immediate calm , as if the world knows to slow down when you’re around. Every time we meet, without fail, I find myself forgetting all the things that were weighing on me. The worries, the noise, the endless thoughts… they all fade into the background, and for a while, it’s just us.
+  </p>
+
+  <p>
+    You feel like home to me in the truest sense of the word. Not just a place, but a feeling - safe, warm, and familiar. With you, I don’t feel the need to be anything other than myself. You have this rare ability to bring balance into my life, simply by being who you are. Calm, steady, and deeply peaceful. Being around you reminds me that love doesn’t always have to be intense or overwhelming. Sometimes, it’s quiet. Sometimes, it’s soft. And somehow, that makes it even more powerful.
+  </p>
+
+  <p>
+    I still remember the very first day we met so clearly. I remember the way you looked at me, and how your eyes filled with tears when I gave you those flowers. That moment stays with me more than you know. It wasn’t dramatic or loud, but it felt real, like something important had just begun without either of us saying it out loud. I think a part of me knew right then that you were someone special, someone I would always carry with me.
+  </p>
+
+  <p>
+    You have always been the kind of love I was searching for, even before I knew how to put it into words. A love that feels calm instead of chaotic. Balanced instead of uncertain. Peaceful instead of restless. With you, my heart doesn’t feel like it’s running anymore, it feels settled. And that’s something I never want to take for granted.
+  </p>
+
+  <p>
+    I choose you, Sudha. Not just once, but every day. Because with you, I’ve found a love that feels like home, a peace that feels like belonging, and a happiness that feels quietly, beautifully right.
+  </p>
+</article>
+
+
+      <div class="signature">
+        <span class="heart" aria-hidden="true">&#10084;</span>
+        <p>Always yours,</p>
+        <p class="name">Your Mutu</p>
+      </div>
+
+
+      <div class="actions">
+        <button class="primary" type="button" onclick="location.href='memorylane.html'">
+          Aww! I love it
+        </button>
+        <button class="ghost" id="tooCheesy" type="button">Too cheesy</button>
+        <p class="cheesy-message" id="cheesyMessage">
+          You have broken my heart 💔 by saying my feelings are cheesy. Now press
+          “Aww! I love it” to make me feel better.
+        </p>
+      </div>
+
+      <script>
+        const tooCheesy = document.getElementById("tooCheesy");
+        const cheesyMessage = document.getElementById("cheesyMessage");
+
+        tooCheesy.addEventListener("click", () => {
+          cheesyMessage.classList.add("show");
+          tooCheesy.classList.add("hide");
+        });
+      </script>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Valentine Ask</title>
+    <link rel="stylesheet" href="css/question.css" />
+  </head>
+  <body>
+    <main class="question">
+      <header class="question-header">
+        <button
+          class="back-button"
+          type="button"
+          aria-label="Back"
+          onclick="location.href='memorylane.html'"
+        >
+          <span aria-hidden="true">&#10094;</span>
+        </button>
+        <div class="pill">THE VALENTINE ASK</div>
+        <span class="spacer" aria-hidden="true"></span>
+      </header>
+
+      <span class="heart heart-top" aria-hidden="true">&#10084;</span>
+      <span class="heart heart-left" aria-hidden="true">&#10084;</span>
+
+      <section class="photo-area" aria-label="A rose">
+        <div class="photo-card">
+          <img src="assets/4444.jpeg" alt="A pink rose" />
+          <span class="heart-badge" aria-hidden="true">&#10084;</span>
+        </div>
+      </section>
+
+      <h1>So, Miss Sudha</h1>
+      <p class="subtitle">Will you be my Valentine?</p>
+
+      <div class="actions">
+        <button class="cta primary" id="yesButton" type="button">
+          Yes, I'd love to! <span aria-hidden="true">&#10084;</span>
+        </button>
+        <button class="cta ghost" id="noButton" type="button">No</button>
+      </div>
+
+      <p class="footer">CRAFTED WITH LOVE FOR 2026</p>
+    </main>
+
+    <script>
+      const yesButton = document.getElementById("yesButton");
+      const noButton = document.getElementById("noButton");
+      let yesScale = 1;
+
+      yesButton.addEventListener("click", () => {
+        window.location.href = "yes.html";
+      });
+
+      noButton.addEventListener("click", () => {
+        yesScale = Math.min(1.25, yesScale + 0.06);
+        yesButton.style.setProperty("--yes-scale", yesScale);
+        noButton.classList.remove("shake");
+        void noButton.offsetWidth;
+        noButton.classList.add("shake");
+        setTimeout(() => {
+          window.location.href = "whychoose.html";
+        }, 180);
+      });
+    </script>
+  </body>
+</html>

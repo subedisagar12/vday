@@ -1,0 +1,218 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap");
+
+:root {
+  --bg-dark: #1d0c14;
+  --bg-mid: #2a0f1c;
+  --bg-light: #3a1425;
+  --rose: #f23375;
+  --rose-soft: #ff7ba6;
+  --text: rgba(255, 255, 255, 0.85);
+  --muted: rgba(255, 255, 255, 0.55);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: radial-gradient(circle at top, var(--bg-light), var(--bg-mid) 45%, var(--bg-dark) 100%);
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+}
+
+.moment {
+  width: min(92vw, 460px);
+  min-height: 100vh;
+  padding: 32px 22px 36px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.back-link {
+  position: absolute;
+  top: 54px;
+  left: 22px;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+}
+
+.label {
+  font-size: 0.85rem;
+  letter-spacing: 0.3rem;
+  color: rgba(255, 255, 255, 0.45);
+  position: absolute;
+  top: 22px;
+  left: 22px;
+}
+
+.tiny-heart {
+  color: #b62b54;
+  position: absolute;
+  top: 22px;
+  right: 22px;
+}
+
+.message {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  font-size: 1.7rem;
+}
+
+p {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.cursor {
+  position: relative;
+  padding-right: 10px;
+}
+
+.cursor::after {
+  content: "";
+  position: absolute;
+  right: 2px;
+  top: 6px;
+  width: 2px;
+  height: 20px;
+  background: var(--rose);
+  animation: blink 1s step-end infinite;
+}
+
+.actions {
+  margin-top: 40px;
+  display: grid;
+  gap: 18px;
+  width: min(80vw, 280px);
+}
+
+.primary {
+  padding: 16px 20px;
+  border-radius: 999px;
+  border: none;
+  background: #f23375;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 18px 30px rgba(242, 51, 117, 0.35);
+  transform: none;
+}
+
+.ghost {
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.plea {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.55);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.plea.show {
+  opacity: 1;
+}
+
+.sad-emoji {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  font-size: 1.6rem;
+  pointer-events: none;
+  animation: floatAngry 1.2s ease forwards;
+  z-index: 5;
+}
+
+.progress {
+  margin-top: auto;
+  width: 70%;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.progress .bar {
+  display: block;
+  width: 22%;
+  height: 100%;
+  background: var(--rose);
+  border-radius: 999px;
+}
+
+.moment-footer {
+  width: 100%;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1.35rem;
+}
+
+.moment-footer .spark {
+  color: var(--rose);
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes floatAngry {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  30% {
+    opacity: 1;
+    transform: translate(-50%, -70px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -130px) scale(1.1);
+  }
+}
+
+@media (max-width: 420px) {
+  .message {
+    margin-top: 120px;
+  }
+
+  h1 {
+    font-size: 1.55rem;
+  }
+}

@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Sudha</title>
+    <link rel="stylesheet" href="css/valentine.css" />
+  </head>
+  <body>
+    <main class="cover">
+      <span class="heart heart-top" aria-hidden="true">&#10084;</span>
+      <span class="heart heart-left" aria-hidden="true">&#10084;</span>
+      <span class="heart heart-bottom" aria-hidden="true">&#10084;</span>
+
+      <p class="dedication">For Sudha <span aria-hidden="true">&#128151;</span></p>
+
+      <section class="rose-stage" aria-label="A single rose">
+        <div class="rose-frame">
+          <img
+            class="rose"
+            src="assets/1.jpeg"
+            alt="A portrait in warm sunlight"
+          />
+        </div>
+      </section>
+
+      <div class="message" aria-live="polite">
+        <p class="typed">
+          <span class="line" id="lineOne"></span>
+          <span class="line accent" id="lineTwo"></span>
+        </p>
+        <div class="dots" aria-hidden="true">
+          <span></span>
+          <span class="mid"></span>
+          <span></span>
+        </div>
+        <span class="typed-heart" id="typedHeart" aria-hidden="true">&#10084;</span>
+      </div>
+
+      <button class="cta" id="openLetter" type="button">
+        <span class="cta-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img">
+            <path
+              d="M3 7.5 12 13l9-5.5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <rect
+              x="3"
+              y="6"
+              width="18"
+              height="12"
+              rx="2"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+          </svg>
+        </span>
+        Open the letter
+      </button>
+
+      <p class="signature">With all my love</p>
+    </main>
+
+    <div class="page-turn" id="pageTurn" aria-hidden="true"></div>
+
+    <script>
+      const lineOne = document.getElementById("lineOne");
+      const lineTwo = document.getElementById("lineTwo");
+      const typedHeart = document.getElementById("typedHeart");
+      const openLetter = document.getElementById("openLetter");
+      const pageTurn = document.getElementById("pageTurn");
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      );
+
+      const lineOneText = "A special message";
+      const lineTwoText = "just for you";
+      const pauseIndex = lineOneText.indexOf("special") + "special".length;
+
+      const typeLine = (target, text, pauseAt, done) => {
+        let index = 0;
+        const step = () => {
+          target.textContent = text.slice(0, index);
+          if (index >= text.length) {
+            if (done) done();
+            return;
+          }
+          const delay = pauseAt && index === pauseAt ? 500 : 65;
+          index += 1;
+          setTimeout(step, delay);
+        };
+        step();
+      };
+
+      const typeMessage = () => {
+        if (prefersReducedMotion.matches) {
+          lineOne.textContent = lineOneText;
+          lineTwo.textContent = lineTwoText;
+          typedHeart.classList.add("reveal");
+          return;
+        }
+        lineOne.textContent = "";
+        lineTwo.textContent = "";
+        typeLine(lineOne, lineOneText, pauseIndex, () => {
+          setTimeout(() => {
+            typeLine(lineTwo, lineTwoText, null, () => {
+              typedHeart.classList.add("reveal");
+            });
+          }, 200);
+        });
+      };
+
+      openLetter.addEventListener("click", () => {
+        if (prefersReducedMotion.matches) {
+          window.location.href = "pause.html";
+          return;
+        }
+        document.body.classList.add("turning");
+        pageTurn.classList.add("active");
+        setTimeout(() => {
+          window.location.href = "pause.html";
+        }, 900);
+      });
+
+      window.addEventListener("load", () => {
+        typeMessage();
+      });
+    </script>
+  </body>
+</html>
