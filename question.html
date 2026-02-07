@@ -53,15 +53,20 @@
         window.location.href = "yes.html";
       });
 
+      let noClicks = 0;
+
       noButton.addEventListener("click", () => {
         yesScale = Math.min(1.25, yesScale + 0.06);
         yesButton.style.setProperty("--yes-scale", yesScale);
         noButton.classList.remove("shake");
         void noButton.offsetWidth;
         noButton.classList.add("shake");
-        setTimeout(() => {
-          window.location.href = "whychoose.html";
-        }, 180);
+        noClicks += 1;
+        if (noClicks >= 3) {
+          setTimeout(() => {
+            window.location.href = "whychoose.html";
+          }, 180);
+        }
       });
     </script>
   </body>
