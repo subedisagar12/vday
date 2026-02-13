@@ -56,7 +56,7 @@
       unlockButton.addEventListener("click", () => {
         remaining -= 1;
         if (remaining <= 0) {
-          window.location.href = "final.html";
+          window.location.href = "plan.html";
           return;
         }
         hintText.textContent = `${remaining} click${remaining === 1 ? "" : "s"} away from surprise`;

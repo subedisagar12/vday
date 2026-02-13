@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Playfair+Display:wght@600;700&display=swap");
+
+:root {
+  --bg-dark: #130910;
+  --bg-mid: #241122;
+  --bg-light: #3a1f37;
+  --panel: rgba(26, 13, 24, 0.28);
+  --accent: #f23375;
+  --accent-soft: #ff9bc1;
+  --ink: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.7);
+  --line: rgba(242, 51, 117, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  color: var(--ink);
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at 18% 0%, #4a2453 0%, var(--bg-light) 28%, var(--bg-mid) 58%, var(--bg-dark) 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 88% 24%, rgba(255, 169, 210, 0.12), rgba(255, 169, 210, 0) 42%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.plan-page {
+  position: relative;
+  z-index: 1;
+  width: min(94vw, 760px);
+  padding: 28px 18px 62px;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.58);
+  text-decoration: none;
+  font-size: 0.86rem;
+  letter-spacing: 0.11rem;
+  text-transform: uppercase;
+}
+
+.starline {
+  color: rgba(242, 51, 117, 0.8);
+  letter-spacing: 0.38rem;
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+
+h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #ff6fa5;
+}
+
+.subtitle {
+  margin-top: 2px;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  color: var(--muted);
+  font-size: 1.25rem;
+}
+
+.hero-divider {
+  width: 140px;
+  height: 1px;
+  margin: 18px auto 18px;
+  background: linear-gradient(90deg, rgba(242, 51, 117, 0), rgba(242, 51, 117, 0.45), rgba(242, 51, 117, 0));
+}
+
+.timeline {
+  position: relative;
+  padding-left: 48px;
+  display: grid;
+  gap: 24px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  background: repeating-linear-gradient(
+    180deg,
+    var(--line) 0,
+    var(--line) 4px,
+    transparent 4px,
+    transparent 10px
+  );
+}
+
+.slot {
+  position: relative;
+  background: linear-gradient(150deg, var(--panel), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(242, 51, 117, 0.13);
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.slot::before {
+  content: "\2665";
+  position: absolute;
+  left: -43px;
+  top: 20px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(242, 51, 117, 0.28);
+  border: 1px solid rgba(242, 51, 117, 0.55);
+  box-shadow: 0 0 0 6px rgba(242, 51, 117, 0.12);
+  font-size: 14px;
+  display: grid;
+  place-items: center;
+}
+
+.time {
+  display: inline-block;
+  font-size: 0.9rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.slot h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.desc {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.venue {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.93rem;
+  letter-spacing: 0.03rem;
+}
+
+.closing {
+  margin-top: 34px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  text-align: center;
+}
+
+.quote {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.9rem;
+  font-style: italic;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.sign {
+  margin-top: 14px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.4rem;
+  font-style: italic;
+  color: #ff6fa5;
+}
+
+.final-cta {
+  margin-top: 20px;
+  font-size: 2rem;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  color: #ff6fa5;
+}
+
+@media (max-width: 520px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  .timeline {
+    padding-left: 38px;
+  }
+
+  .slot::before {
+    left: -35px;
+  }
+
+  .slot h2 {
+    font-size: 1.65rem;
+  }
+
+  .quote {
+    font-size: 1.6rem;
+  }
+
+  .sign {
+    font-size: 2rem;
+  }
+
+  .final-cta {
+    font-size: 1.7rem;
+  }
+}
